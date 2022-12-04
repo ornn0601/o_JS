@@ -1,0 +1,166 @@
+* {
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #fff;
+  font-family: 'Pretendard';
+  line-height: 1.4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.accordionBox {}
+.accordion {}
+.fixedBox {
+  margin-bottom: 30px;
+}
+
+.accordion.fixedBox .title {
+  background-color: #e9e9e9;
+}
+
+.accordion .title {
+  width: 400px;
+  border: 1px solid #ddd;
+  padding: 10px 0 7px 0;
+  padding-left: 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s;
+  margin-bottom: 10px;
+}
+.accordion .title p {
+  margin: 0;
+}
+.accordion .title .category {
+  display: inline-block;
+  margin-right: 10px;
+  width: 50px;
+}
+.accordion .title p:after {
+  content: '';
+  background: url('../0.image/plus.png') no-repeat center center;
+  background-size: contain;
+  width: 18px;
+  height: 18px;
+  float: right;
+  margin-right: 10px;
+  transition: 0.3s;
+  transform: rotate(0deg);
+}
+
+.accordion .title:hover,
+.accordion .title.on {
+  background-color: #eff9ff;
+  color: #000;
+}
+.accordion .title.on p:after {
+  transform: rotate(315deg);
+  color: orange;
+}
+
+.accordion .desc {
+  padding: 15px;
+  display: none;
+}
+.accordion .desc.on {
+  display: block;
+}
+.accordion .desc p {
+  margin: 0 0 20px 0;
+}
+
+
+
+/* 페이지 번호 */
+.pagination {
+  margin-top: 20px;
+}
+.pagination ul {
+  display: flex;
+}
+
+/* 숫자 */
+.pagination #pagination li {
+  margin: 0 10px;
+  display: inline-block;
+  text-decoration: none;
+  color: #797979;
+  font-size: 20px;
+  line-height: 32px;
+  text-align: center;
+  font-weight: 400;
+  margin: 0 8px;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  position: relative;
+}
+.pagination #pagination li.on,
+.pagination #pagination li:hover {
+  color: #44aaee;
+}
+
+.pagination #pagination li.on::after {
+  content: '';
+  width: 50%;
+  height: 2px;
+  border-radius: 2px;
+  background-color: #44aaee;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+}
+
+/* 이전, 다음 버튼 */
+#prev, #next {
+  pointer-events: none;
+  cursor: pointer;
+  color: #1f1f1f;
+  opacity: 0.2;
+  transition: 0.3s;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #1f1f1f;
+  border-radius: 100%;
+  font-size: 12px;
+  font-weight: 500;
+}
+#next {
+  margin-left: 10px;
+}
+#prev {
+  margin-right: 10px;
+}
+
+#prev:hover, #next:hover {
+  background-color: #44aaee;
+  color: #fff;
+  border-color: transparent;
+}
+
+#prev.active, #next.active {
+  pointer-events: all;
+  opacity: 1;
+}
+
+#prev svg, #next svg {
+  width: 12px;
+  height: 12px;
+  fill: #1f1f1f;
+}
+#prev:hover svg, #next:hover svg {
+  fill: #fff;
+}

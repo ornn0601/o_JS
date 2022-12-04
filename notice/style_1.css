@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f3f3f3;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 768px;
+  margin: 60px auto 0;
+}
+
+.contentBox {
+  height: 100vh;
+}
+
+h1 {
+  text-align: center;
+}
+
+/* 페이징 부분 CSS */
+.pagination {
+  margin-top: 15px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+
+.pagination ul {
+  display: flex;
+}
+.pagination ul li {
+  margin: 0 10px;
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  line-height: 50px;
+  text-align: center;
+  margin: 5px;
+  /* transition: 0.4s; */
+  background-color: #44aaee;
+  box-shadow: 0 0 4px rgba(0, 0, 0, .2);
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+}
+
+.pagination ul li.on,
+.pagination ul li:hover {
+  color: #000;
+  background-color: #fff;
+}
+
+
+.table_bgBox {
+  background-color: #fff;
+  width: 100%;
+  border: 1px solid #ccc;
+}
+/* 테이블 */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table tr {
+  display: flex;
+}
+table td {
+  text-align: center;
+  padding: 15px 0;
+  flex: 1;
+}
+
+
+table thead tr {
+  background-color: #e9e9e9;
+  text-align: center;
+  height: 40px;
+}
+table thead tr td {
+}
+
+table tbody tr {
+}
+table tbody tr:not(:nth-child(7)) {
+  border-bottom: 1px solid #e9e9e9;
+}
+table tbody tr td {
+}
+
+
+/* 카테고리 버튼 */
+.categoryBox {}
+.categoryBox ul {}
+.categoryBox ul li {}

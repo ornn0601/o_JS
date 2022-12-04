@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>새로고침 없는 게시판</title>
+  <link rel="stylesheet" href="./style_1.css">
+</head>
+<body>
+  <header>
+    <h1>jQuery Ajax Notice</h1>
+  </header>
+
+  <div class="contentBox"></div>
+
+  <main>
+
+    <div class="table_bgBox">
+    <!-- 페이징 표시할 부분 HTML -->
+    <table>
+      <thead>
+        <tr>
+          <td>No.</td>
+          <td>category</td>
+          <td>title</td>
+          <td>date</td>
+        </tr>
+      </thead>
+      <tbody class="list" id="list">
+        
+      </tbody>
+    </table>
+    </div>
+    <div class="pagination">
+      <ul id="pagination"></ul>
+    </div>
+
+  </main>
+
+  <div class="contentBox"></div>
+  
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="./main_1.js"></script>
+</body>
+</html>

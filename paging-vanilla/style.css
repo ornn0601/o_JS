@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+#numbers {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  margin: 30px;
+  border-bottom: 1px solid gray;
+}
+
+#numbers li {
+  font-size: 30px;
+  margin: 0 10px;
+  
+}
+
+#numbers li a {
+  color: #000;
+  text-decoration: none;
+  padding: 0 10px;
+}
+#numbers li a:hover,
+#numbers li a.active {
+  color: crimson;
+}
+
+#my-table {
+  width: 100%;
+}
+
+#my-table tbody:nth-child(odd) {
+  background-color: #ccc;
+}
+
+td, th {
+  text-align: left;
+  padding: .5rem 1rem;
+  border: 1px solid gray;
+}
+
+.col1 { width: 15%; }
+.col2 { width: 35%; }
+.col3 { width: 35%; }
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pagination i {
+  font-size: 1.2em;
+  color: #000;
+  cursor: pointer;
+}

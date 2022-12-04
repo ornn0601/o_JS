@@ -1,0 +1,207 @@
+* {
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f3f3f3;
+  font-family: 'Pretendard';
+  line-height: 1.7;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 768px;
+  margin: 60px auto 0;
+}
+
+.contentBox {
+  height: 100vh;
+}
+
+h1 {
+  text-align: center;
+}
+
+/* 페이징 부분 CSS */
+.pagination {
+  margin-top: 15px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+
+/* 페이지 번호 */
+.pagination {
+  margin-top: 20px;
+}
+.pagination ul {
+  display: flex;
+}
+
+/* 숫자 */
+.pagination #pagination li {
+  margin: 0 10px;
+  display: inline-block;
+  text-decoration: none;
+  color: #797979;
+  font-size: 20px;
+  line-height: 32px;
+  text-align: center;
+  font-weight: 400;
+  margin: 0 8px;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  position: relative;
+}
+.pagination #pagination li.on,
+.pagination #pagination li:hover {
+  color: #44aaee;
+}
+
+.pagination #pagination li.on::after {
+  content: '';
+  width: 50%;
+  height: 2px;
+  border-radius: 2px;
+  background-color: #44aaee;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+}
+
+/* 이전, 다음 버튼 */
+#prev, #next {
+  pointer-events: none;
+  cursor: pointer;
+  color: #1f1f1f;
+  opacity: 0.2;
+  transition: 0.3s;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #1f1f1f;
+  border-radius: 100%;
+  font-size: 12px;
+  font-weight: 500;
+}
+#next {
+  margin-left: 10px;
+}
+#prev {
+  margin-right: 10px;
+}
+
+#prev:hover, #next:hover {
+  background-color: #44aaee;
+  color: #fff;
+  border-color: transparent;
+}
+
+#prev.active, #next.active {
+  pointer-events: all;
+  opacity: 1;
+}
+
+#prev svg, #next svg {
+  width: 12px;
+  height: 12px;
+  fill: #1f1f1f;
+}
+#prev:hover svg, #next:hover svg {
+  fill: #fff;
+}
+
+
+.table_bgBox {
+  background-color: #fff;
+  width: 100%;
+  border: 1px solid #ccc;
+}
+/* 테이블 */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table tr {
+  display: flex;
+  align-items: center;
+}
+table td {
+  text-align: center;
+  padding: 15px 0;
+  flex: 1;
+}
+
+
+table thead tr {
+  background-color: #e9e9e9;
+  text-align: center;
+  height: 40px;
+}
+table thead tr td {
+}
+
+table tbody tr {
+}
+table tbody tr:not(:nth-child(7)) {
+  border-bottom: 1px solid #e9e9e9;
+}
+table tbody tr td {
+}
+
+
+/* 카테고리 버튼 */
+.categoryBox {
+  margin: 30px 0 20px;
+}
+.categoryBox ul {
+  display: flex;
+}
+.categoryBox ul li {
+  margin: 0 10px;
+  border: 1px solid #797979;
+  border-radius: 99px;
+  padding: 2px 20px;
+  background-color: #fff;
+  color: #797979;
+  font-size: 18px;
+  font-weight: 400;
+  /* transition: 0.3s; */
+  cursor: pointer;
+}
+.categoryBox ul li:hover,
+.categoryBox ul li.active {
+  background-color: #44aaee;
+  color: #fff;
+  border-color: transparent;
+}
+
+#search-input {
+  width: 80%;
+  font-size: 18px;
+  padding: 0.6rem;
+  width: 400px
+}

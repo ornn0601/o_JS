@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>새로고침 없는 게시판</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <div class="contentBox"></div>
+
+  <h1>새로고침없고,<br> JSON 파일로 작동하는 게시판</h1>
+
+  <section>
+
+    <!-- 페이징 표시할 부분 HTML -->
+    <p id="displayCount"></p>
+    <table>
+      <thead>
+          <tr>
+              <td>No.</td>
+              <td>Category</td>
+              <td>Title</td>
+              <td>Date</td>
+          </tr>
+      </thead>
+      <tbody id="dataTableBody">
+
+      </tbody>
+    </table>
+
+    <ul id="pagingul">
+    </ul>
+    
+  </section>
+
+  <div class="contentBox"></div>
+  
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="./main.js"></script>
+</body>
+</html>

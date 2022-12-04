@@ -1,0 +1,49 @@
+.emptyBox-1 {
+  height: 30vh;
+}
+.emptyBox-2 {
+  height: 200vh;
+}
+
+.sticky_section {
+  position: relative;
+}
+.sticky_section ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  height: 3rem;
+  margin: 0;
+}
+.sticky_section ul li {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 3rem;
+  width: 20%;
+  text-align: center;
+  color: #000;
+}
+
+.sticky_section.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+@media all and (max-width: 980px) {
+  .emptyBox-1 {
+    height: 20vh;
+  }
+
+  .sticky_section ul {
+    height: 2rem;
+  }
+  .sticky_section ul li {
+    font-size: 1rem;
+    line-height: 2rem;
+  }
+}

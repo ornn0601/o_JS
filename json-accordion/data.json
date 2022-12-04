@@ -1,0 +1,139 @@
+{
+  "fixedData" : [
+    {
+      "no" : 1,
+      "category" : "감정",
+      "question" : "(고정) 이것은 그것인가?",
+      "answer" : "이것은 그것이다."
+    },
+    {
+      "no" : 2,
+      "category" : "신청",
+      "question" : "(고정) 이것은 그것인가?",
+      "answer" : "이것은 그것이다."
+    }
+  ],
+  
+  "data" : [
+    {
+      "no" : 1,
+      "category" : "감정",
+      "question" : "1. 이것은 그것인가?",
+      "answer" : "이것은 그것이다."
+    },
+    {
+      "no" : 2,
+      "category" : "신청",
+      "question" : "2. 이것은 그것인가?",
+      "answer" : "이것은 그것이다."
+    },
+    {
+      "no" : 3,
+      "category" : "보증서",
+      "question" : "3. 이것은 그것인가?",
+      "answer" : "이것은 그것이다."
+    },
+    {
+      "no" : 4,
+      "category" : "감정",
+      "question" : "4. 이것은 그것인가?",
+      "answer" : "이것은 그것이다."
+    },
+    {
+      "no" : 5,
+      "category" : "신청",
+      "question" : "5. 이것은 그것인가?",
+      "answer" : "이것은 그것이다."
+    },
+    {
+      "no" : 6,
+      "category" : "보증서",
+      "question" : "6. 이것은 그것인가?",
+      "answer" : "이것은 그것이다."
+    },
+    {
+      "no" : 7,
+      "category" : "감정",
+      "question" : "7. 이것은 그것인가?",
+      "answer" : "이것은 그것이다."
+    },
+    {
+      "no" : 8,
+      "category" : "신청",
+      "question" : "8. 이것은 그것인가?",
+      "answer" : "이것은 그것이다."
+    },
+    {
+      "no" : 9,
+      "category" : "보증서",
+      "question" : "9. 이것은 그것인가?",
+      "answer" : "이것은 그것이다."
+    },
+    {
+      "no" : 10,
+      "category" : "감정",
+      "question" : "10. 이것은 그것인가?",
+      "answer" : "이것은 그것이다."
+    },
+    {
+      "no" : 11,
+      "category" : "신청",
+      "question" : "11. 이것은 그것인가?",
+      "answer" : "이것은 그것이다."
+    },
+    {
+      "no" : 12,
+      "category" : "보증서",
+      "question" : "12. 이것은 그것인가?",
+      "answer" : "이것은 그것이다."
+    },
+    {
+      "no" : 13,
+      "category" : "감정",
+      "question" : "13. 이것은 그것인가?",
+      "answer" : "이것은 그것이다."
+    },
+    {
+      "no" : 14,
+      "category" : "신청",
+      "question" : "14. 이것은 그것인가?",
+      "answer" : "이것은 그것이다."
+    },
+    {
+      "no" :15,
+      "category" : "보증서",
+      "question" : "15. 이것은 그것인가?",
+      "answer" : "이것은 그것이다."
+    },
+    {
+      "no" : 16,
+      "category" : "감정",
+      "question" : "16. 이것은 그것인가?",
+      "answer" : "이것은 그것이다."
+    },
+    {
+      "no" : 17,
+      "category" : "신청",
+      "question" : "17. 이것은 그것인가?",
+      "answer" : "이것은 그것이다."
+    },
+    {
+      "no" : 18,
+      "category" : "보증서",
+      "question" : "18. 이것은 그것인가?",
+      "answer" : "이것은 그것이다."
+    },
+    {
+      "no" : 19,
+      "category" : "감정",
+      "question" : "19. 이것은 그것인가?",
+      "answer" : "이것은 그것이다."
+    },
+    {
+      "no" : 20,
+      "category" : "보증서",
+      "question" : "20. 이것은 그것인가?",
+      "answer" : "이것은 그것이다."
+    }
+  ]
+}

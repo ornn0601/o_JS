@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>새로고침 없는 게시판</title>
+  <link rel="stylesheet" href="./pretendard.css">
+  <link rel="stylesheet" href="./style_3.css">
+</head>
+<body>
+  <header>
+    <h1>jQuery Ajax Notice</h1>
+  </header>
+
+  <!-- <div class="contentBox"></div> -->
+
+  <main>
+    <div class="searchBox">
+      <input id="search-input" class="form-control" type="text">
+    </div>
+
+    <div class="categoryBox">
+      <ul id="categoryBtn">
+        <li id="btn1" data-id="all" class="active">All</li>
+        <li id="btn2" data-id="HTML">HTML</li>
+        <li id="btn3" data-id="CSS">CSS</li>
+        <li id="btn4" data-id="JavaScript">JavaScript</li>
+      </ul>
+    </div>
+
+    <div class="table_bgBox">
+    <!-- 페이징 표시할 부분 HTML -->
+    <table>
+      <thead>
+        <tr>
+          <td>No.</td>
+          <td>category</td>
+          <td>title</td>
+          <td>date</td>
+        </tr>
+      </thead>
+      <tbody class="list" id="list">
+        
+      </tbody>
+    </table>
+    </div>
+    <div class="pagination">
+      <ul class="paginationBox">
+        <li id="prev">
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="chevron-left" role="img" viewBox="0 0 256 512" class="svg-inline--fa fa-chevron-left fa-w-8 fa-9x">
+          <path d="M231.293 473.899l19.799-19.799c4.686-4.686 4.686-12.284 0-16.971L70.393 256 251.092 74.87c4.686-4.686 4.686-12.284 0-16.971L231.293 38.1c-4.686-4.686-12.284-4.686-16.971 0L4.908 247.515c-4.686 4.686-4.686 12.284 0 16.971L214.322 473.9c4.687 4.686 12.285 4.686 16.971-.001z" class=""></path>
+          </svg>
+        </li>
+        <ul id="pagination"></ul>
+        <li id="next">
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="far" data-icon="chevron-right" role="img" viewBox="0 0 256 512" class="svg-inline--fa fa-chevron-right fa-w-8 fa-9x">
+          <path d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z" class=""></path>
+          </svg>
+        </li>
+      </ul>
+    </div>
+
+  </main>
+
+  <!-- <div class="contentBox"></div> -->
+  
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="./main_3.js"></script>
+</body>
+</html>

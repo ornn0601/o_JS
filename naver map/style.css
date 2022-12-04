@@ -1,0 +1,32 @@
+.o_icon {
+  margin: 0px;
+  padding: 0px;
+  border: 0px solid transparent;
+  display: block;
+  max-width: none;
+  max-height: none;
+  -webkit-user-select: none;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 0px;
+  top: 0px;
+}
+
+.btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid crimson;
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+}
+
+.maps_content {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>countUp</title>
+
+  <style>
+    .emptyBox {
+      height: 100vh;
+    }
+
+    section {
+      padding: 3rem 0;
+      text-align: center;
+    }
+    .contentBox {
+      width: 100%;
+
+    }
+    .contentBox p {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    .contentBox p span {}
+
+  </style>
+</head>
+<body>
+  
+  <div class="emptyBox"></div>
+  <section>
+    <div class="contentBox o_countUp_1">
+      <p class="o_title"><span class="counter" data-count="16000"></span>개 사</p>
+      <p class="o_title"><span class="counter" data-count="800"></span>개 사</p>
+      <p class="o_title"><span class="counter" data-count="100"></span>개 사</p>
+    </div>
+  </section>
+  <div class="emptyBox"></div>
+  <section>
+    <div class="contentBox o_countUp_2">
+      <p class="o_title"><span class="counter" data-count="12000"></span>명</p>
+      <p class="o_title"><span class="counter" data-count="50"></span>명</p>
+      <p class="o_title"><span class="counter" data-count="1200000"></span>명</p>
+    </div>
+  </section>
+  <div class="emptyBox"></div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="./countUp.js"></script>
+</body>
+</html>
