@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MOUSE MAGNET</title>
+  <link rel="stylesheet" href="../o_reset.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js" integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f1f1f1;
+      font-family: 'Raleway', serif;
+    }
+
+    a {
+      background-color: #7319FF;
+      width: 300px;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    a > span {
+      font-size: 30px;
+      color: #00FFC6;
+      transition: transform 100ms ease-out;
+    }
+  </style>
+</head>
+<body>
+
+  <a>
+    <span>GET IN TOUCH</span>
+  </a>
+
+
+  <script>
+    function magneticButton(element) {
+      const children = element.children[0];
+
+      element.addEventListener('mousemove', e => {
+        const { offsetLeft, offsetTop, offsetWidth, offsetHeight } = element;
+        const left = e.pageX - offsetLeft;
+        const top = e.pageY - offsetTop;
+        const centerX = left - offsetWidth / 2;
+        const centerY = top - offsetHeight / 2;
+        const d = Math.sqrt(centerX**2 + centerY**2);
+
+        // 탄성 표현 /(시간)
+        gsap.to(element, 0.5, {
+          x: centerX / 1.5,
+          y: centerY / 1.5,
+          ease: Elastic.easeOut
+        });
+
+        // 거리 조절
+        children.style.transform = `
+          translate3d(${centerX / 4}px, ${centerY / 4}px, 0)
+          rotate3d(${-centerY / 100}, ${centerX / 100}, 0, ${d / 10}deg)
+        `;
+      });
+
+      element.addEventListener('mouseleave', () => {
+        gsap.to(element, 1.2, {
+          x: 0,
+          y: 0,
+          ease: Elastic.easeOut.config(1, 0.1)
+        });
+        children.style.transform = '';
+      });
+    }
+
+    const a = document.querySelector('a');
+    magneticButton(a);
+  </script>
+</body>
+</html>

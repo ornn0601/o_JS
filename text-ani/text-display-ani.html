@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TEXT DISPLAY ANI</title>
+  <link rel="stylesheet" href="../o_reset.css">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #020202;
+    }
+
+    p {
+      max-width: 500px;
+      white-space: pre-line;
+      letter-spacing: 0.1em;
+      font-size: 3rem;
+      font-family: 'VT323', monospace;
+      color: #05d1e1;
+    }
+  </style>
+</head>
+<body>
+
+  <p class="style3">ORNN COMMUNICATION</p>
+
+  <script>
+    function paragraph(element) {
+      const array = element.innerText.split('');
+      const special = ['~', '@', '!', '#', '$', '%', '^', '&', '*'];
+      const exception = [' ', '\n', '.', ','];
+      const random = (min, max) => {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      }
+      
+      const numArray = [];
+      array.forEach(char => {
+        const num = random(5, 40);
+        numArray.push(num);
+      })
+
+      let completeCount;
+      let newText;
+      const timer = setInterval(() => {
+        completeCount = 0;
+        newText = '';
+        numArray.forEach((num, i) => {
+          if (exception.includes(array[i]) || numArray[i] === 0) {
+            newText += array[i];
+            completeCount += 1;
+          } else {
+            newText += special[numArray[i] % special.length];
+            numArray[i] = --num;
+          }
+        });
+
+        element.innerText = newText;
+        if (completeCount === numArray.length) clearInterval(timer)
+      }, 100);
+    }
+
+    const p = document.querySelector('p');
+    paragraph(p);
+  </script>
+</body>
+</html>
