@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>card-flip-scroll</title>
+  <link rel="stylesheet" href="../o_reset.css">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&family=Titan+One&display=swap');
+
+    html, body {
+      background-color: #FBF8F1;
+      font-family: 'Titan One', cursive;
+      color: #2f2f2f;
+    }
+
+    .start-screen, .end-screen {
+      width: 100%;
+      height: 100vh;
+      background-color: #2f2f2f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8vw;
+      color: #f1f1f1;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .start-screen > h1 {
+      animation: bounce 0.5s ease-out alternate-reverse infinite;
+    }
+
+    @keyframes bounce {
+      100% {
+        transform: translateY(-20%);
+      }
+    }
+
+    .end-screen {
+      font-size: 8vw;
+    }
+
+    .main-content-1 {
+      width: 100%;
+      height: 500vh;
+    }
+
+    .sticky {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .sticky-background {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8vw;
+    }
+
+    .card-frame {
+      position: absolute;
+      width: 95vw;
+      height: 30vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .card {
+      width: 24%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20vw;
+      transform-style: preserve-3d;
+      position: relative;
+      transform: perspective(100vw)
+      translateX(100vw) 
+      rotateY(180deg);
+      transition: transform 0.1s;
+    }
+
+    .front, .back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 1vw;
+      overflow: hidden;
+      backface-visibility: hidden;
+    }
+
+    .front {
+      background-color: #FFF;
+      font-size: 0.5em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .back {
+      transform: rotateY(180deg);
+      background-color: #E0DED7;
+      background-image: repeating-linear-gradient(0deg, #3B3A38, #3B3A38 33.3%, #ffffff00 0px, #ffffff00 67%);
+      background-size: 100%;
+    }
+
+    @media screen and (orientation:portrait) {
+      .card-frame {
+        display: grid;
+        height: initial;
+        width: initial;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10vw;
+        justify-items: center;
+      }
+    
+      .card {
+        font-size: 20vw;
+        width: 35vw;
+        height: 50vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="start-screen">
+    <h1>SCROLL DOWN</h1>
+  </div>
+  <div class="main-content-1">
+    <div class="sticky">
+      <div class="sticky-background">
+        SCROLL ANIMATION
+      </div>
+      <div class="card-frame">
+        <div class="card">
+          <div class="front">🦖</div>
+          <div class="back"></div>
+        </div>
+        <div class="card">
+          <div class="front">🦈</div>
+          <div class="back"></div>
+        </div>
+        <div class="card">
+          <div class="front">🦋</div>
+          <div class="back"></div>
+        </div>
+        <div class="card">
+          <div class="front">🦒</div>
+          <div class="back"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="end-screen">
+    Card Flip<br />
+    &<br />
+    Scroll Animation
+  </div>
+  <script>
+    class CardFlipOnScroll {
+      constructor(wrapper, sticky) {
+        this.wrapper = wrapper
+        this.sticky = sticky
+        this.cards = sticky.querySelectorAll('.card')
+        this.length = this.cards.length
+
+        this.start = 0
+        this.end = 0
+        this.step = 0
+      }
+
+      init() {
+        this.start = this.wrapper.offsetTop - 100
+        this.end = this.wrapper.offsetTop + this.wrapper.offsetHeight - innerHeight * 1.2
+        this.step = (this.end - this.start) / (this.length * 2)
+      }
+
+      animate() {
+        this.cards.forEach((card, i) => {
+          const s = this.start + this.step * i
+          const e = s + this.step * (this.length + 1)
+
+          if (scrollY <= s) {
+            card.style.transform = `
+              perspective(100vw)
+              translateX(100vw) 
+              rotateY(180deg)
+            `
+          } else if (scrollY > s && scrollY <= e - this.step) {
+            card.style.transform = `
+              perspective(100vw)
+              translateX(${100 + (scrollY - s) / (e - s) * -100}vw)
+              rotateY(180deg)
+            `
+          } else if (scrollY > e - this.step && scrollY <= e) {
+            card.style.transform = `
+              perspective(100vw)
+              translateX(${100 + (scrollY - s) / (e - s) * -100}vw)
+              rotateY(${180 + -(scrollY - (e - this.step)) / this.step * 180}deg)
+            `
+          } else if (scrollY > e) {
+            card.style.transform = `
+              perspective(100vw)
+              translateX(0vw) 
+              rotateY(0deg)
+            `
+          }
+        })
+      }
+    }
+
+    const mainContent1 = document.querySelector('.main-content-1')
+    const sticky = document.querySelector('.sticky')
+    const cardFlipOnScroll = new CardFlipOnScroll(mainContent1, sticky)
+    cardFlipOnScroll.init()
+
+    window.addEventListener('scroll', () => {
+      cardFlipOnScroll.animate()
+    })
+
+    window.addEventListener('resize', () => {
+      cardFlipOnScroll.init()
+    })
+  </script>
+</body>
+</html>
