@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <p id="pageName">pageName</p>
+  <a class="pathName" href="/contact1">문의하기</a>
+  <a class="pathName" href="/contact2">문의하기</a>
+  <a class="pathName" href="/contact3">문의하기</a>
+  <a class="pathName" href="/contact4">문의하기</a>>
+
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+  <script>
+    $(document).ready(function() {
+
+      // 각각 href를 유지하며 path를 붙여보자~~!
+
+      function pathName() {
+        
+        const pageNameText = $('#pageName').text();
+
+        $('.pathName').each(function() {
+          const href = $(this).attr('href');
+          const hrefRel = href + '?path=';
+
+          const pathName = hrefRel + pageNameText;
+          $(this).attr('href', pathName); // 문의 url
+        });
+      }
+      pathName();
+  });
+
+  </script>
+</body>
+</html>
